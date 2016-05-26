@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="PDPTracker.LoginPage"
+		Title="{Binding LoginTitle}">
+  
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"/>
+  </ContentPage.Padding>
+  
+  <StackLayout Padding="10" Spacing="10" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+    <Entry Text="{Binding Username}" Placeholder="Sogeti Email" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+    <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+      <Switch IsToggled="{Binding ShouldRemember}" HorizontalOptions="End" VerticalOptions="CenterAndExpand"/>
+      <Label Text="Remember me" FontSize="16" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+    </StackLayout>
+    <Button Text="LOGIN" Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"/>
+  </StackLayout>
+</ContentPage>
