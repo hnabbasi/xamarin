@@ -2,19 +2,70 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="PDPTracker.LoginPage"
+		xmlns:converters="clr-namespace:PDPTracker.Converters;assembly=PDPTracker"
 		Title="{Binding LoginTitle}">
+	
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"/>
+	</ContentPage.Padding>
   
-  <ContentPage.Padding>
-    <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"/>
-  </ContentPage.Padding>
-  
-  <StackLayout Padding="10" Spacing="10" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
-    <Entry Text="{Binding Username}" Placeholder="Sogeti Email" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
-    <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
-    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
-      <Switch IsToggled="{Binding ShouldRemember}" HorizontalOptions="End" VerticalOptions="CenterAndExpand"/>
-      <Label Text="Remember me" FontSize="16" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
-    </StackLayout>
-    <Button Text="LOGIN" Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"/>
-  </StackLayout>
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <converters:MultiTriggerConverter x:Key="LoginButtonConverter"/>
+
+      <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="#4F141A"/>
+      </Style>
+
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="#4F141A"/>
+      </Style>
+      
+      <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#4F141A"/>
+        <Setter Property="TextColor" Value="White"/>
+      </Style>
+      
+      <Style TargetType="ActivityIndicator">
+        <Setter Property="Color" Value="#4F141A"/>
+      </Style>
+      
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+    <StackLayout Padding="10" Spacing="10" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+		<Label Text="J♠" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+           FontSize="48"
+           FontAttributes="Bold"
+           TextColor="White"/>
+    <Entry x:Name="username" Text="{Binding Username}" Placeholder="Sogeti email" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+		<Entry x:Name="password" Text="{Binding Password}" Placeholder="Password" IsPassword="True" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+		<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+			<Switch  IsToggled="{Binding ShouldRemember}" HorizontalOptions="End" VerticalOptions="CenterAndExpand"/>
+			<Label Text="Remember me" FontSize="16" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+		</StackLayout>
+		<Label Text="{Binding ErrorMsg}" IsVisible="{Binding ShowErrorMsg}" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center" TextColor="Red"/>
+		<Button Text="LOGIN" Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+			<!--<Button.Triggers>
+        <MultiTrigger TargetType="Button">				
+          <MultiTrigger.Conditions>
+					  <BindingCondition Binding="{Binding Source={x:Reference username},
+                              Path=Text.Length,
+                              Converter={StaticResource LoginButtonConverter}}"
+                              
+                              Value="true"/>
+          
+            <BindingCondition Binding="{Binding Source={x:Reference password},
+                              Path=Text.Length,
+                              Converter={StaticResource LoginButtonConverter}}"
+                              
+                              Value="true"/>
+				  </MultiTrigger.Conditions>
+          <Setter Property="IsEnabled" Value="False"/>
+        </MultiTrigger>
+      </Button.Triggers>-->
+		</Button>
+      <ActivityIndicator x:Name="ActivityIndicator" HorizontalOptions="Center" VerticalOptions="Center"
+                         IsRunning="True" IsVisible="{Binding ShowIndicator}"/>
+	</StackLayout>
 </ContentPage>

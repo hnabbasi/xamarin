@@ -1,4 +1,5 @@
 ﻿using System;
+using Hackathon.Spade.Model;
 using Xamarin.Forms;
 
 namespace PDPTracker
@@ -7,12 +8,21 @@ namespace PDPTracker
     {
         Page _parentPage;
 
+        public string ActivityTitle => "Activity Details";
+
+        public Activity Activity { get; set; }
+
         public ActivityViewModel (Page page)
         {
             _parentPage = page;
         }
 
-        public string ActivityTitle => "Activity Details";
+        public ActivityViewModel(Page page, Activity activity)
+        {
+            this._parentPage = page;
+            this.Activity = activity;
+        }
+
     }
 }
 

@@ -12,7 +12,7 @@ namespace PDPTracker
     {
         #region Private Fields
 
-        readonly Page _parentPage;
+        private readonly Page _parentPage;
 
         #endregion
 
@@ -29,7 +29,7 @@ namespace PDPTracker
 
         #region Login Title
 
-        string _loginTitle = "PDP Tracker";
+        private string _loginTitle = "PDP Tracker";
 
         public string LoginTitle {
             get { 
@@ -44,7 +44,7 @@ namespace PDPTracker
 
         #region Username
 
-        string _username;
+        private string _username;
 
         public string Username {
             get {
@@ -60,7 +60,7 @@ namespace PDPTracker
 
         #region Password
 
-        string _password;
+        private string _password;
 
         public string Password {
             get {
@@ -77,13 +77,52 @@ namespace PDPTracker
 
         #region Remember Me
 
-        bool _shouldRemember = true;          public bool ShouldRemember {             get { 
+        private bool _shouldRemember;
+
+        public bool ShouldRemember {             get { 
                 return _shouldRemember; 
             }             set {
                 _shouldRemember = value;
-                OnPropertyChanged ();}         } 
+                OnPropertyChanged ();}         }
+
 
         #endregion
+
+        #region ErrorMsg
+        
+        public string ErrorMsg => "Login failed";
+
+        #endregion
+
+        #region ShowErrorMsg
+
+        private bool _showErrorMsg;
+
+        public bool ShowErrorMsg
+        {
+            get { return _showErrorMsg; }
+            set
+            {
+                if (_showErrorMsg.Equals(value))
+                    return;
+
+                _showErrorMsg = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
+        private bool _showIndicator;
+        public bool ShowIndicator
+        {
+            get { return _showIndicator; }
+            set
+            {
+                _showIndicator = value;
+                OnPropertyChanged();
+            }
+        }
 
         #endregion
 
@@ -95,12 +134,28 @@ namespace PDPTracker
 
         #region Private Methods
 
-        void OnLogin ()
+        private async void OnLogin ()
         {
-            if (string.IsNullOrWhiteSpace (Username) || string.IsNullOrWhiteSpace (Password))
+            if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
                 return;
-            
-            _parentPage.Navigation.PopModalAsync ();
+
+            ShowIndicator = true;
+
+            if (Task.Run(() => LoginSuccessful()).Result)
+            {
+                ShowErrorMsg = false;
+                await _parentPage.Navigation.PopModalAsync();
+            }
+            else
+                ShowErrorMsg = true;
+
+            ShowIndicator = false;
+        }
+
+        private bool LoginSuccessful()
+        {
+            Task.Delay(2000);
+            return Username == "huabbasi" && Password == "pass";
         }
 
         #endregion

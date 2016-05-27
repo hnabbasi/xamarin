@@ -11,16 +11,17 @@ namespace PDPTracker
 
         public HomePage ()
         {
+            InitializeComponent();
             _vm = new HomeViewModel (this);
             BindingContext = _vm;
-
-
-            InitializeComponent ();
         }
 
-        void Handle_Clicked (object sender, System.EventArgs e)
+        protected override void OnAppearing()
         {
-            Navigation.PushAsync (new ActivityPage ());
+            base.OnAppearing();
+
+            if (ActivitiesList.SelectedItem != null)
+                ActivitiesList.SelectedItem = null;
         }
     }
 }

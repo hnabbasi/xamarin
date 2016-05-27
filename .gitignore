@@ -3,3 +3,8 @@
 ################################################################################
 
 /PDPTracker/Droid/obj/Debug
+/PDPTracker/Droid/bin/Debug
+/PDPTracker/iOS/bin/iPhoneSimulator/Debug
+/PDPTracker/iOS/obj/iPhoneSimulator/Debug
+/PDPTracker/PDPTracker/bin/Debug
+/PDPTracker/PDPTracker/obj/Debug
