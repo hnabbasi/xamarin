@@ -152,11 +152,7 @@ namespace PDPTracker
             ShowIndicator = false;
         }
 
-        private bool LoginSuccessful()
-        {
-            Task.Delay(5000);
-            return Username.ToLower() == "huabbasi" && Password == "pass";
-        }
+        private bool LoginSuccessful() => Username.ToLower() == "huabbasi" && Password == "pass";
 
         #endregion
     }

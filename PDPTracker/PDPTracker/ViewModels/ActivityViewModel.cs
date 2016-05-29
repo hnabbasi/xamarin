@@ -10,7 +10,30 @@ namespace PDPTracker
 
         public string ActivityTitle => "Activity Details";
 
-        public Activity Activity { get; set; }
+        private Activity _activity;
+        public Activity Activity
+        {
+            get { return _activity; }
+            set { _activity = value; OnPropertyChanged();}
+        }
+
+        public string Description {
+            get { return Activity.Description; }
+            set
+            {
+                Activity.Description = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public DateTime? CompletedDate {
+            get { return Activity.CompletedDate; }
+            set
+            {
+                Activity.CompletedDate = value;
+                OnPropertyChanged();
+            }
+        }
 
         public ActivityViewModel (Page page)
         {

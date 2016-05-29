@@ -37,8 +37,7 @@
     <StackLayout Padding="10" Spacing="10" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
 		<Label Text="J♠" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
            FontSize="48"
-           FontAttributes="Bold"
-           TextColor="White"/>
+           FontAttributes="Bold"/>
     <Entry x:Name="username" Text="{Binding Username}" Placeholder="Sogeti email" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
 		<Entry x:Name="password" Text="{Binding Password}" Placeholder="Password" IsPassword="True" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
 		<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
