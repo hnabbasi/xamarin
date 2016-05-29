@@ -4,7 +4,8 @@
 	<ContentPage.Content>
     <ListView x:Name="ActivitiesList" ItemsSource="{Binding Activities}" SelectedItem="{Binding SelectedActivity}"
               HorizontalOptions="FillAndExpand"
-              VerticalOptions="FillAndExpand">
+              VerticalOptions="FillAndExpand"
+			  RowHeight="60">
       <ListView.ItemTemplate>
         <DataTemplate>
           <TextCell Text="{Binding Description}" Detail="{Binding CompletedDate, StringFormat='{0:MMMM dd, yyyy}'}"/>

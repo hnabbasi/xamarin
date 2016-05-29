@@ -5,15 +5,18 @@
 		Title="{Binding ActivityTitle}">
 	<ContentPage.Content>
     <StackLayout Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-      <Label Text="{Binding Activity.Description}"
-             HorizontalOptions="StartAndExpand"
-             VerticalOptions="Start"/>
+
+      	<Label Text="{Binding Activity.CompletedDate, StringFormat='Completed {0:MMMM dd, yyyy}'}"
+           	HorizontalOptions="FillAndExpand"
+           	VerticalOptions="Start"
+			HorizontalTextAlignment="End"
+            FontSize="12"
+            TextColor="Gray"/>
+
+		<Label Text="{Binding Activity.Description}"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="Start"/>
       
-      <Label Text="{Binding Activity.CompletedDate}"
-           HorizontalOptions="StartAndExpand"
-           VerticalOptions="StartAndExpand"
-             FontSize="12"
-             TextColor="Gray"/>
     </StackLayout>
     
 	</ContentPage.Content>

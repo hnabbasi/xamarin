@@ -154,8 +154,8 @@ namespace PDPTracker
 
         private bool LoginSuccessful()
         {
-            Task.Delay(2000);
-            return Username == "huabbasi" && Password == "pass";
+            Task.Delay(5000);
+            return Username.ToLower() == "huabbasi" && Password == "pass";
         }
 
         #endregion

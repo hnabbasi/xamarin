@@ -1,6 +1,6 @@
-﻿<Properties StartupItem="Droid/PDPTracker.Droid.csproj">
+﻿<Properties StartupItem="iOS/PDPTracker.iOS.csproj" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.ItemProperties.PDPTracker.Droid PreferredExecutionTarget="Android.Nexus 5 (Lollipop)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PDPTracker/ViewModels/HomeViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PDPTracker Status">
     <Files>
       <File FileName="PDPTracker/ViewModels/HomeViewModel.cs" Line="13" Column="13" />
       <File FileName="PDPTracker/Views/ActivityPage.xaml" Line="5" Column="33" />
@@ -8,6 +8,7 @@
       <File FileName="PDPTracker/ViewModels/ActivityViewModel.cs" Line="6" Column="51" />
       <File FileName="PDPTracker/Views/HomePage.xaml.cs" Line="12" Column="18" />
       <File FileName="PDPTracker/Views/HomePage.xaml" Line="3" Column="58" />
+      <File FileName="PDPTracker Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
