@@ -1,14 +1,13 @@
 ﻿<Properties StartupItem="iOS/PDPTracker.iOS.csproj" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.ItemProperties.PDPTracker.Droid PreferredExecutionTarget="Android.Nexus 5 (Lollipop)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PDPTracker Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PDPTracker/ViewModels/HomeViewModel.cs">
     <Files>
-      <File FileName="PDPTracker/ViewModels/HomeViewModel.cs" Line="13" Column="13" />
-      <File FileName="PDPTracker/Views/ActivityPage.xaml" Line="5" Column="33" />
-      <File FileName="PDPTracker/Views/ActivityPage.xaml.cs" Line="13" Column="28" />
-      <File FileName="PDPTracker/ViewModels/ActivityViewModel.cs" Line="6" Column="51" />
-      <File FileName="PDPTracker/Views/HomePage.xaml.cs" Line="12" Column="18" />
-      <File FileName="PDPTracker/Views/HomePage.xaml" Line="3" Column="58" />
-      <File FileName="PDPTracker Status" />
+      <File FileName="PDPTracker/Views/ProfilePage.xaml" Line="24" Column="39" />
+      <File FileName="PDPTracker/Views/ProfilePage.xaml.cs" Line="21" Column="31" />
+      <File FileName="PDPTracker/Views/ActivityPage.xaml.cs" Line="58" Column="21" />
+      <File FileName="PDPTracker/ViewModels/ActivityViewModel.cs" Line="49" Column="53" />
+      <File FileName="PDPTracker/ViewModels/LoginViewModel.cs" Line="1" Column="1" />
+      <File FileName="PDPTracker/ViewModels/HomeViewModel.cs" Line="16" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -16,5 +15,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.PDPTracker.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.4877F755-CAEF-4CD1-B178-F4529C35FB41" />
+  <MonoDevelop.Ide.ItemProperties.PDPTracker.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.70806DA8-DFED-41C8-A656-BA426B06D380" />
 </Properties>

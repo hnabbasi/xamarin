@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="PDPTracker.ActivityPage"
@@ -6,26 +6,26 @@
 	<ContentPage.Content>
     <StackLayout Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-      	<Label Text="{Binding CompletedDate, StringFormat='Completed {0:MMMM dd, yyyy}'}"
+      	<Label x:Name="DateLabel" Text="{Binding CompletedDate, StringFormat='Completed {0:MMMM dd, yyyy}'}"
+
            	HorizontalOptions="FillAndExpand"
            	VerticalOptions="Start"
 			HorizontalTextAlignment="End"
             FontSize="12"
             TextColor="Gray"/>
 
-      <Label x:Name="DescriptionLabel" Text="{Binding Description, Mode=TwoWay}"
+		<Label x:Name="DescriptionLabel" 
+			Text="{Binding Description}"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="StartAndExpand"
-            HorizontalTextAlignment="Start"
-            FontSize="16"/>
-      
-		  <Entry x:Name="DescriptionEntry" Text="{Binding Description, Mode=TwoWay}"
-              HorizontalOptions="FillAndExpand"
-              VerticalOptions="StartAndExpand"
-              HorizontalTextAlignment="Start"
-              FontSize="16"
-              IsVisible="False"
-              BackgroundColor="White"/>
+			FontSize="16"/>
+
+		<Entry x:Name="DescriptionEntry" 
+			Text="{Binding Description}"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="StartAndExpand"
+			FontSize="16"
+			IsVisible="false"/>
       
     </StackLayout>
     
