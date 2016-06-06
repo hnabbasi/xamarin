@@ -23,15 +23,7 @@ namespace ZoomBoomer.Droid
     {
         protected override void OnDraw(Canvas canvas)
         {
-            try
-            {
-                Task.Run(()=> base.OnDraw(canvas)).ConfigureAwait(false);
-            }
-            catch (Exception ex)
-            {
-                Log.Debug("FrameException", (ex.InnerException ?? ex).Message);
-                //throw;
-            }
+            base.OnDraw(canvas);
         }
     }
 }
