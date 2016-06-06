@@ -10,6 +10,7 @@ namespace PDPTracker
 {
     public class LoginViewModel : BaseViewModel
     {
+
         #region Private Fields
 
         private readonly Page _parentPage;
@@ -79,10 +80,10 @@ namespace PDPTracker
 
         private bool _shouldRemember;
 
-        public bool ShouldRemember {             get { 
-                return _shouldRemember; 
+        public bool ShouldRemember {             get {
+                return DataService.RememberMe;
             }             set {
-                _shouldRemember = value;
+                DataService.RememberMe = value;
                 OnPropertyChanged ();}         }
 
 

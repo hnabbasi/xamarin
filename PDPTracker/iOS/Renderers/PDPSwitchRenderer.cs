@@ -18,8 +18,8 @@ namespace PDPTracker.iOS
             if (Control == null)
                 return;
             
-            Control.TintColor = UIColor.FromRGB(79,20,26);
-            Control.OnTintColor = UIColor.FromRGB(79, 20, 26);
+            Control.TintColor = UIColor.FromRGB(98,26,65);
+            Control.OnTintColor = UIColor.FromRGB(98, 26, 65);
         }
     }
 }

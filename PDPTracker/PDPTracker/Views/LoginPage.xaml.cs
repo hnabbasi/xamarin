@@ -15,6 +15,11 @@ namespace PDPTracker
             _vm = new LoginViewModel (this);
             BindingContext = _vm;
         }
+
+        protected override bool OnBackButtonPressed ()
+        {
+            return true;
+        }
     }
 }
 
