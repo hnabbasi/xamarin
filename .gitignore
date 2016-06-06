@@ -2,9 +2,16 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+bin\
+obj\
 /PDPTracker/Droid/obj/Debug
 /PDPTracker/Droid/bin/Debug
 /PDPTracker/iOS/bin/iPhoneSimulator/Debug
 /PDPTracker/iOS/obj/iPhoneSimulator/Debug
 /PDPTracker/PDPTracker/bin/Debug
 /PDPTracker/PDPTracker/obj/Debug
+/ZoomBoomer/ZoomBoomer/ZoomBoomer/bin/Debug
+/ZoomBoomer/ZoomBoomer/ZoomBoomer/obj/Debug
+/ZoomBoomer/ZoomBoomer/ZoomBoomer.Droid/obj/Debug
+/ZoomBoomer/ZoomBoomer/ZoomBoomer.Droid/bin/Debug
+/ZoomBoomer/ZoomBoomer/ZoomBoomer.iOS/obj/iPhone/Debug

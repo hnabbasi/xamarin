@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZoomBoomer;assembly=ZoomBoomer"
+             x:Class="ZoomBoomer.HomePage"
+             BackgroundColor="White">
+  
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+      </Style>
+    
+      <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="Black"/>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <Grid Padding="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <ScrollView Orientation="Horizontal" BackgroundColor="Silver">
+      <ScrollView>
+        <local:CustomFrame>
+          <Label
+            Text="{Binding MainText}" 
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand"
+            FontSize="{Binding FontSize}"
+            Scale="{Binding ScaleFactor}"/>
+        </local:CustomFrame>
+      </ScrollView>
+    </ScrollView>
+    
+    <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+      <Label Text="Text:" HorizontalOptions="Start" VerticalOptions="Center"/>
+      <Entry
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="Center"
+        Text="{Binding MainText}"
+        TextColor="Gray"/>
+      
+      <Button Text="Update" Command="{Binding UpdateCommand}" HorizontalOptions="End" VerticalOptions="Center"/>
+    </StackLayout>
+    
+    <Grid Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Label Text="Font Size" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+      <Label Grid.Column="1" Text="{Binding FontSize}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+      <Button Grid.Column="2" Text="+" Command="{Binding IncrementCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+      <Button Grid.Column="3" Text="-" Command="{Binding DecrementCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+    </Grid>
+    
+    <Grid Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Label Text="Scale" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+      <Label Grid.Column="1" Text="{Binding ScaleFactor}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+      <Button Grid.Column="2" Text="+" Command="{Binding IncrementScaleCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+      <Button Grid.Column="3" Text="-" Command="{Binding DecrementScaleCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+    </Grid>
+  </Grid>
+
+
+</ContentPage>
