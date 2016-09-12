@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFPrism.Views.LoginPage"
+             Title="{Binding Title}">
+  <Frame Padding="16" HorizontalOptions="Center" VerticalOptions="Center" >
+    <StackLayout>
+      <Label Text="{Binding Title}" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Center" Spacing="10">
+        <Label Text="Failed"/>
+        <Switch IsToggled="{Binding IsSuccess}"/>
+        <Label Text="Success"/>
+      </StackLayout>
+      <Button Text="Done" Command="{Binding DoneCommand}" HorizontalOptions="Center" VerticalOptions="Center"/>
+    </StackLayout>
+  </Frame>
+</ContentPage>
