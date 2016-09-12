@@ -9,14 +9,16 @@ namespace XFPrism.ViewModels
     public class MainPageViewModel : BaseViewModel
     {
         private readonly ISayHello _sayHelloService;
+        //private readonly IPageDialogService _dialogService;
         private readonly INavigationService _navigationService;
 
         #region Constructor
 
-        public MainPageViewModel(ISayHello sayHelloService, INavigationService navigationService)
+        public MainPageViewModel(ISayHello sayHelloService, INavigationService navigationService) //, IPageDialogService dialogService)
         {
             _sayHelloService = sayHelloService;
             _navigationService = navigationService;
+            //_dialogService = dialogService;
 
             Title = "Welcome";
             Initialize();
@@ -44,6 +46,7 @@ namespace XFPrism.ViewModels
         
         private void Initialize()
         {
+            //_dialogService.DisplayAlertAsync("Dialog Service", "Hi", "OK");
             _sayHelloService.SayHello("Forms says Hi");
         }
         
