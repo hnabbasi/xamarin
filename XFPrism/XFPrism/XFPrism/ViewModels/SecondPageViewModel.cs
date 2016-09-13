@@ -8,8 +8,8 @@ namespace XFPrism.ViewModels
 {
     public class SecondPageViewModel : BaseViewModel
     {
-        private INavigationService _navigationService;
-        private ISayHello _sayHelloService;
+        private readonly INavigationService _navigationService;
+        private readonly ISayHello _sayHelloService;
         public SecondPageViewModel(INavigationService navigationService, ISayHello sayHelloService)
         {
             _navigationService = navigationService;
@@ -25,7 +25,8 @@ namespace XFPrism.ViewModels
 
         public override void OnNavigatedTo(NavigationParameters parameters)
         {
-            if (!parameters.Any()) return;
+            if (!parameters.Any())
+                return;
 
             var sender = (string) parameters[AppConstants.Sender];
             var result = (bool) parameters[AppConstants.LoginSuccess] ? "Login successful" : "Login failed";

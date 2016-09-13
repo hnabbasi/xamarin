@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:controls="clr-namespace:XFPrism.Controls;assembly=XFPrism"
              x:Class="XFPrism.Views.MainPage"
              Title="{Binding Title}">
   <Frame Padding="16" HorizontalOptions="Center" VerticalOptions="Center" >
     <StackLayout>
-      <Label Text="{Binding Title}"/>
+      <controls:XfLabel Text="{Binding Title}"/>
       <Button Text="Go Home" Command="{Binding HomeCommand}" HorizontalOptions="Center" VerticalOptions="Center"/>
+      <Button Text="Say Hi" Command="{Binding SayHiCommand}" HorizontalOptions="Center" VerticalOptions="Center"/>
     </StackLayout>
   </Frame>
 </ContentPage>

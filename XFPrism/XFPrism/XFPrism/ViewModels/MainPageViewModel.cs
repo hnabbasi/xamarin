@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using System.Windows.Input;
+using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
 using XFPrism.Interface;
@@ -9,16 +10,16 @@ namespace XFPrism.ViewModels
     public class MainPageViewModel : BaseViewModel
     {
         private readonly ISayHello _sayHelloService;
-        //private readonly IPageDialogService _dialogService;
+        private readonly IPageDialogService _dialogService;
         private readonly INavigationService _navigationService;
 
         #region Constructor
 
-        public MainPageViewModel(ISayHello sayHelloService, INavigationService navigationService) //, IPageDialogService dialogService)
+        public MainPageViewModel(INavigationService navigationService, ISayHello sayHelloService, IPageDialogService dialogService)
         {
             _sayHelloService = sayHelloService;
+            _dialogService = dialogService;
             _navigationService = navigationService;
-            //_dialogService = dialogService;
 
             Title = "Welcome";
             Initialize();
@@ -40,16 +41,26 @@ namespace XFPrism.ViewModels
 
         #endregion
 
+        #region SayHiCommand
+
+        public ICommand SayHiCommand => new DelegateCommand(OnSayHiCommand);
+
+        private void OnSayHiCommand()
+        {
+            _dialogService.DisplayAlertAsync("Dialog Service", "Hi", "OK");
+        }
+
+        #endregion
+
         #endregion
 
         #region Private Methods
-        
+
         private void Initialize()
         {
-            //_dialogService.DisplayAlertAsync("Dialog Service", "Hi", "OK");
             _sayHelloService.SayHello("Forms says Hi");
         }
-        
+
         #endregion
     }
 }

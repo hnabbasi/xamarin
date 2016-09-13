@@ -131,6 +131,7 @@
   <ItemGroup>
     <Compile Include="AndroidInitializer.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\XfLabelRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SayHelloDroid.cs" />

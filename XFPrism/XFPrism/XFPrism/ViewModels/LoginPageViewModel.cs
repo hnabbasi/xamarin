@@ -9,7 +9,7 @@ namespace XFPrism.ViewModels
 {
     public class LoginPageViewModel : BaseViewModel
     {
-        private INavigationService _navigationService;
+        private readonly INavigationService _navigationService;
         public LoginPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
