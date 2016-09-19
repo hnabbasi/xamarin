@@ -1,7 +1,9 @@
-﻿using System.Windows.Input;
+﻿using System.Threading.Tasks;
+using System.Windows.Input;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
+using Xamarin.Forms;
 using XFPrism.Interface;
 using XFPrism.Views;
 
@@ -56,11 +58,13 @@ namespace XFPrism.ViewModels
 
         #region Private Methods
 
-        private void Initialize()
+        private async void Initialize()
         {
             _sayHelloService.SayHello("Forms says Hi");
-        }
 
+            await Task.Yield();
+            SayHiCommand.Execute(this);
+        }
         #endregion
     }
 }

@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System.Threading.Tasks;
+using Xamarin.Forms;
+using XFPrism.ViewModels;
 
 namespace XFPrism.Views
 {
