@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using UIKit;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using XFPrism.Controls;
 using XFPrism.iOS.Renderers;
@@ -11,7 +12,7 @@ namespace XFPrism.iOS.Renderers
         protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
         {
             base.OnElementChanged(e);
-            Element.TextColor = Color.Purple;
+            Control.TextColor = UIColor.Purple;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace XFPrism.Droid.Renderers
         protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
         {
             base.OnElementChanged(e);
-            Element.TextColor = Color.Purple;
+            Control.SetTextColor(Android.Graphics.Color.Purple);
         }
     }
 }
